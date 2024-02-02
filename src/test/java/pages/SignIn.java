@@ -40,11 +40,12 @@ public class SignIn {
         if (passwordTxtBox.isDisplayed())
             passwordTxtBox.sendKeys(password);
     }
-    public void clickSubmitSignIn() {
+    public boolean clickSubmitSignIn() {
         WebElement submitsignin = driver.findElement(submitSigninBtn);
         if (submitsignin.isDisplayed()) {
             submitsignin.click();
         }
+        return false;
     }
 
 
