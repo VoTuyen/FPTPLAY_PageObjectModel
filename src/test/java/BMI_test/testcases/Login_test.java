@@ -11,6 +11,8 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import javax.swing.plaf.TableHeaderUI;
+
 public class Login_test {
     WebDriver driver;
 
@@ -52,17 +54,21 @@ public class Login_test {
     }
     @Test(dataProvider = "testData")
     void verifyLoginSuccess(String username, String password, String expectedResult) throws InterruptedException {
+        Thread.sleep(10000);
         homePage.clickDangnhapBtn();
         homePage.fillAccountUser(username,password);
         homePage.clickDangnhapBtnInPopup();
-        //homePage.clickTieptucDnBtn();
-        //homePage.fillOTP();
-        //homePage.clickConfirmLogin();
-        homePage.clickContinueDnInNewBrowser();
-        homePage.clickAccountBtn();
-        String actualResult = homePage.getResult();
-        System.out.println(actualResult);
+        homePage.login();
+        Thread.sleep(1000);
+        String actualResult = homePage.getResultLogin();
         Assert.assertEquals(actualResult,expectedResult);
+    }
+    @Test
+    void verifyLogoutSuccess() throws InterruptedException {
+        homePage.logout();
+        Thread.sleep(1000);
+        String actualLogoutResult = homePage.getResultLogout();
+        Assert.assertEquals(actualLogoutResult,"Đăng nhập");
     }
 
 //    @Test(dataProvider = "testData")
