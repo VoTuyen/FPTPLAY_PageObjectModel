@@ -1,0 +1,32 @@
+<suite name="Calculator">
+
+    <test name="chrome browser">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="BMI_test.testcases.BodyMassIndex_test_POM" />
+        </classes>
+    </test>
+
+    <test name="edge browser">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="BMI_test.testcases.BodyMassIndex_test_POM" />
+        </classes>
+    </test>
+
+    <test name="firefox browser">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="BMI_test.testcases.BodyMassIndex_test_POM" />
+        </classes>
+    </test>
+
+<!--    <test name="safari browser">-->
+<!--        <parameter name="browser" value="safari"/>-->
+<!--        <classes>-->
+<!--            <class name="BMI_test.testcases.BodyMassIndex_test_POM" />-->
+<!--        </classes>-->
+<!--    </test>-->
+
+
+</suite>
