@@ -1,5 +1,6 @@
 package BMI_test.testcases;
 
+import BMI_test.pages.AccountPage;
 import BMI_test.pages.CalculatorPage;
 import BMI_test.pages.HomePage;
 import org.openqa.selenium.WebDriver;
@@ -49,19 +50,20 @@ public class Login_test {
         // là feature của testNG
     Object[][] testData(){
         return new Object[][]{
-                {"0974303989","123456","Đang xem"}
+                {"0974303989","123321"}
         };
     }
+
     @Test(dataProvider = "testData")
-    void verifyLoginSuccess(String username, String password, String expectedResult) throws InterruptedException {
-        Thread.sleep(10000);
+    void verifyLoginSuccess(String username, String password) throws InterruptedException {
+        Thread.sleep(6000);
         homePage.clickDangnhapBtn();
         homePage.fillAccountUser(username,password);
         homePage.clickDangnhapBtnInPopup();
-        homePage.login();
-        Thread.sleep(1000);
+        homePage.loginwithOTP();
+        Thread.sleep(5000);
         String actualResult = homePage.getResultLogin();
-        Assert.assertEquals(actualResult,expectedResult);
+        Assert.assertEquals(actualResult,"Đang xem");
     }
     @Test
     void verifyLogoutSuccess() throws InterruptedException {
@@ -71,12 +73,7 @@ public class Login_test {
         Assert.assertEquals(actualLogoutResult,"Đăng nhập");
     }
 
-//    @Test(dataProvider = "testData")
-//    void validateResultLogoutSuccess(String username, String password){
-//        homePage.logout(username,password);
-//
-//    }
-//
+
 //    @AfterClass
 //    void closeBrowser(){
 //        driver.quit();

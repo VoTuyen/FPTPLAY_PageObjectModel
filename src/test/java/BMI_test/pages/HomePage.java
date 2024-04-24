@@ -28,9 +28,9 @@ public class HomePage {
     By dangxemBlock = By.xpath("//*[@id=\"horizontal-slider\"]/div[1]/h2");
     By continueLoginWithOTP = By.xpath("//button[@class='btn notice-btn btn-none btn-block']");
     By otpLocator1 = By.xpath("//*[@id=\"otp-input-focus\"]");
-    By otpLocator2 = By.xpath("//*[@id=\"__BVID__1084\"]");
-    By otpLocator3 = By.xpath("//*[@id=\"__BVID__1086\"]");
-    By otpLocator4 = By.xpath("//*[@id=\"__BVID__1082\"]");
+    By otpLocator2 = By.xpath("//*[@id=\"__BVID__1083\"]");
+    By otpLocator3 = By.xpath("//*[@id=\"__BVID__1085\"]");
+    By otpLocator4 = By.xpath("//*[@id=\"__BVID__1087\"]");
     By confirmLoginButton = By.xpath("//*[@id=\"verify-modal___BV_modal_footer_\"]/div/button");
     By continueLoginInNewDevice  = By.xpath("//*[@id=\"notice-modal___BV_modal_body_\"]/div/div/button[2]");
     By accountButton = By.xpath("//div[@class='profilesdropdown__toggler']");
@@ -40,6 +40,9 @@ public class HomePage {
     By dongyLogoutBtn = By.xpath("//button[@class='btn mx-1 px-5 button-active btn-none btn-block']");
     By thoatLogoutBtn = By.xpath("//button[@class='btn mx-1 px-5 button-disable btn-none btn-block]");
     By boQuaAdsBtn = By.xpath("//*[@id=\"adsplay-banner-11320103-11320203\"]");
+    By waitBtn = By.xpath("//*[@id=\"notice-modal___BV_modal_body_\"]/div/button");
+
+    //id="iframe-11320103-11320203" -> id iframe wellcome screen Bỏ qua
 
     public void openBrowser(){
         driver.manage().window().maximize();
@@ -49,6 +52,12 @@ public class HomePage {
 //        driver.switchTo().frame(driver.findElement(By.xpath("/html/body/iframe[2]")));
 //        driver.findElement(By.xpath("//*[@id=\"adsplay-banner-11320103-11320203\"]")).click();
 //    }
+
+    public void clickBoQuaWelcome(){
+        driver.switchTo().frame("iframe-11320103-11320203");
+        WebElement boQuaElement = driver.findElement(By.xpath("//*[@id=\"adsplay-container\"]/div[2]/div/div"));
+        boQuaElement.click();
+    }
 
     public void clickDangnhapBtn(){
         WebDriverWait wait = new WebDriverWait(driver,  Duration.ofSeconds(10));
@@ -67,8 +76,12 @@ public class HomePage {
         Thread.sleep(500);
     }
 
-    public void login(){
+    public void loginwithOTP(){
         WebDriverWait wait = new WebDriverWait(driver,  Duration.ofSeconds(10));
+//        boolean waitBtnDisplayed = driver.findElement(waitBtn).isDisplayed();
+//        if(waitBtnDisplayed == TRUE){
+//            driver.findElement(waitBtn).click();
+//        }
         WebElement continueLoginWithOTPElement = wait.until(ExpectedConditions.visibilityOfElementLocated(continueLoginWithOTP));
         continueLoginWithOTPElement.click();
         WebElement otpField1 = wait.until(ExpectedConditions.visibilityOfElementLocated(otpLocator1));
@@ -83,8 +96,8 @@ public class HomePage {
     }
 
 
-//    public void login(){
-//        WebDriverWait wait = new WebDriverWait(driver,  Duration.ofSeconds(10));
+    public void login(){
+        WebDriverWait wait = new WebDriverWait(driver,  Duration.ofSeconds(10));
 //        boolean continueBtnisDisplayed = driver.findElement(continueLoginInNewDevice).isDisplayed();
 //        if(continueBtnisDisplayed == FALSE){
 //        WebElement continueLoginWithOTPElement = wait.until(ExpectedConditions.visibilityOfElementLocated(continueLoginWithOTP));
@@ -100,10 +113,9 @@ public class HomePage {
 //            otpField4.sendKeys("9");
 //            driver.findElement(confirmLoginButton).click();
 //        } else {
-//            driver.findElement(continueLoginInNewDevice).click();
-//        }
-//
-//    }
+            driver.findElement(continueLoginInNewDevice).click();
+        //}
+    }
 
     public void clickAccountBtn(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
