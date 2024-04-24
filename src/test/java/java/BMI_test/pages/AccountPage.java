@@ -30,6 +30,8 @@ public class AccountPage {
     By thongTinCaNhan_HoSo_ThayDoi_CapNhatBtn = By.xpath("//*[@id=\"__BVID__1288___BV_modal_footer_\"]");
     By thongTinCaNhan_HoSo_ThayDoi_CapNhat_QuayLaiBtn = By.xpath("//*[@id=\"result-modal___BV_modal_body_\"]/div/button");
     By thongTinCaNhan_HoSo_TenHienThiText = By.xpath("//*[@id=\"personal-area\"]/div[1]/div[1]/div/div/div[1]/p");
+    By thongTinCaNhan_HoSo_MessageWhenUpdateWithEmtyUsername = By.xpath("//*[@id=\"result-modal___BV_modal_body_\"]/div/h5");
+    By thongTinCaNhan_HoSo_DongYBtn = By.xpath("//*[@id=\"result-modal___BV_modal_body_\"]/div/button");
 
     public String getTitleText(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -91,6 +93,7 @@ public class AccountPage {
     public void clearFieldUsername(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement hoSo_ThayDoiTenHienThiElement = wait.until(ExpectedConditions.visibilityOfElementLocated(tenHienThiField));
+        hoSo_ThayDoiTenHienThiElement.click();
         hoSo_ThayDoiTenHienThiElement.clear();
     }
     public void fillTenHienThi(){
@@ -131,6 +134,17 @@ public class AccountPage {
         WebElement tenHienThiElement = driver.findElement(thongTinCaNhan_HoSo_TenHienThiText);
         //WebElement tenHienThiElement = wait.until(ExpectedConditions.visibilityOfElementLocated(tenHienThiField));
         return tenHienThiElement.getText();
+    }
+
+    public String getMessageWhenUpdateWithEmtyUsername(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement messageElement = wait.until(ExpectedConditions.visibilityOfElementLocated(thongTinCaNhan_HoSo_MessageWhenUpdateWithEmtyUsername));
+        return messageElement.getText();
+    }
+    public void clickDongYBtn(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement dongYElement = wait.until(ExpectedConditions.visibilityOfElementLocated(thongTinCaNhan_HoSo_DongYBtn));
+        dongYElement.click();
     }
 
 }
