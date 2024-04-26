@@ -28,9 +28,9 @@ public class HomePage {
     By dangxemBlock = By.xpath("//*[@id=\"horizontal-slider\"]/div[1]/h2");
     By continueLoginWithOTP = By.xpath("//button[@class='btn notice-btn btn-none btn-block']");
     By otpLocator1 = By.xpath("//*[@id=\"otp-input-focus\"]");
-    By otpLocator2 = By.xpath("//*[@id=\"__BVID__1083\"]");
-    By otpLocator3 = By.xpath("//*[@id=\"__BVID__1085\"]");
-    By otpLocator4 = By.xpath("//*[@id=\"__BVID__1087\"]");
+    By otpLocator2 = By.xpath("//*[@id=\"__BVID__1083\"] | //*[@id=\"__BVID__1003\"]");
+    By otpLocator3 = By.xpath("//*[@id=\"__BVID__1085\"] | //*[@id=\"__BVID__1005\"]");
+    By otpLocator4 = By.xpath("//*[@id=\"__BVID__1087\"] | //*[@id=\"__BVID__1007\"]");
     By confirmLoginButton = By.xpath("//*[@id=\"verify-modal___BV_modal_footer_\"]/div/button");
     By continueLoginInNewDevice  = By.xpath("//*[@id=\"notice-modal___BV_modal_body_\"]/div/div/button[2]");
     By accountButton = By.xpath("//div[@class='profilesdropdown__toggler']");

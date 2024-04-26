@@ -3,6 +3,7 @@ package BMI_test.testcases;
 import BMI_test.pages.AccountPage;
 import BMI_test.pages.HomePage;
 import net.bytebuddy.build.Plugin;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -77,7 +78,7 @@ public class Account_test {
         accountPage.clickThongTinCaNhanBtn();
         String tenHienThi = accountPage.getTenHienThiBeforeUpdate();
         accountPage.clickThayDoiHoSoBtn();
-        accountPage.fillTenHienThi();
+        accountPage.fillTenHienThi("t");
         Thread.sleep(2000);
         accountPage.clickCapNhatHoSoBtn();
         Thread.sleep(2000);
@@ -93,10 +94,26 @@ public class Account_test {
         accountPage.clickThayDoiHoSoBtn();
         Thread.sleep(5000);
         accountPage.clearFieldUsername();
+        accountPage.fillTenHienThi(" ");
         Thread.sleep(2000);
         accountPage.clickCapNhatHoSoBtn();
         String actual_messageWhenUpdateWithEmtyUsername = "Tên hiển thị bao gồm từ 6-20 ký tự, không được chứa ký tự đặc biệt.";
         Assert.assertEquals(accountPage.getMessageWhenUpdateWithEmtyUsername(),actual_messageWhenUpdateWithEmtyUsername);
         accountPage.clickDongYBtn();
     }
+
+    @Test(priority = 3)
+    void verifyCannotUpdateHoSoWithUsernameLessThan6Letter() throws InterruptedException {
+        Thread.sleep(2000);
+        accountPage.clickThayDoiHoSoBtn();
+        accountPage.clearFieldUsername();
+        accountPage.fillTenHienThi("12345");
+        accountPage.clickCapNhatHoSoBtn();
+        String actual_messageWhenUpdateWithEmtyUsername = "Tên hiển thị bao gồm từ 6-20 ký tự, không được chứa ký tự đặc biệt.";
+        Assert.assertEquals(accountPage.getMessageWhenUpdateWithEmtyUsername(),actual_messageWhenUpdateWithEmtyUsername);
+        accountPage.clickDongYBtn();
+    }
+
+//    @Test(priority = 4)
+//    void verifyCannotUpdateHoSoWith
 }

@@ -1,6 +1,7 @@
 package BMI_test.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -8,12 +9,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.swing.plaf.TableHeaderUI;
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class AccountPage {
     WebDriver driver;
 
+
     public AccountPage(WebDriver driver) {
         this.driver = driver;
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
     }
 
     By titleBtn = By.xpath("//*[@id=\"content\"]/div/div/div[1]/div/h4");
@@ -27,7 +31,7 @@ public class AccountPage {
     By nhapMaKichHoatBtn = By.xpath("//*[@id=\"content\"]/div/div/div[1]/div/ul/li[8]/a");
     By thongTinCaNhan_HoSo_ThayDoiBtn = By.xpath("//*[@id=\"personal-area\"]/div[1]/div[1]/div/div/div[2]");
     By tenHienThiField = By.id("fullname");
-    By thongTinCaNhan_HoSo_ThayDoi_CapNhatBtn = By.xpath("//*[@id=\"__BVID__1288___BV_modal_footer_\"]");
+    By thongTinCaNhan_HoSo_ThayDoi_CapNhatBtn = By.xpath("//*[@id=\"__BVID__1288___BV_modal_footer_\"] | //*[@id=\"__BVID__1248___BV_modal_footer_\"] | //*[@id=\"__BVID__52___BV_modal_footer_\"]");
     By thongTinCaNhan_HoSo_ThayDoi_CapNhat_QuayLaiBtn = By.xpath("//*[@id=\"result-modal___BV_modal_body_\"]/div/button");
     By thongTinCaNhan_HoSo_TenHienThiText = By.xpath("//*[@id=\"personal-area\"]/div[1]/div[1]/div/div/div[1]/p");
     By thongTinCaNhan_HoSo_MessageWhenUpdateWithEmtyUsername = By.xpath("//*[@id=\"result-modal___BV_modal_body_\"]/div/h5");
@@ -93,14 +97,14 @@ public class AccountPage {
     public void clearFieldUsername(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement hoSo_ThayDoiTenHienThiElement = wait.until(ExpectedConditions.visibilityOfElementLocated(tenHienThiField));
-        hoSo_ThayDoiTenHienThiElement.click();
         hoSo_ThayDoiTenHienThiElement.clear();
+        //hoSo_ThayDoiTenHienThiElement.sendKeys(Keys.SPACE);
     }
-    public void fillTenHienThi(){
+    public void fillTenHienThi(String profileName){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement hoSo_ThayDoiTenHienThiElement = wait.until(ExpectedConditions.visibilityOfElementLocated(tenHienThiField));
         //hoSo_ThayDoiTenHienThiElement.clear();
-        hoSo_ThayDoiTenHienThiElement.sendKeys("t");
+        hoSo_ThayDoiTenHienThiElement.sendKeys(profileName);
     }
     public void clickCapNhatHoSoBtn(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
