@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-05-05T19:06:43 ICT" name="FPTPLAY" finished-at="2024-05-05T19:08:41 ICT" duration-ms="117781">
+    <groups>
+    </groups>
+    <test started-at="2024-05-05T19:06:43 ICT" name="chrome browser" finished-at="2024-05-05T19:08:41 ICT" duration-ms="117781">
+      <class name="testcases.Account_test">
+        <test-method is-config="true" signature="openBrowser(java.lang.String)[pri:0, instance:testcases.Account_test@27406a17]" started-at="2024-05-05T19:06:43 ICT" name="openBrowser" finished-at="2024-05-05T19:07:50 ICT" duration-ms="67362" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method signature="verifyRedirectToThongTinCaNhanSuccess(java.lang.String,java.lang.String)[pri:0, instance:testcases.Account_test@27406a17]" started-at="2024-05-05T19:07:50 ICT" name="verifyRedirectToThongTinCaNhanSuccess" data-provider="testData" finished-at="2024-05-05T19:07:56 ICT" duration-ms="5589" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0974303989]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRedirectToThongTinCaNhanSuccess -->
+        <test-method signature="verifyUpdateUsernameSuccess()[pri:1, instance:testcases.Account_test@27406a17]" started-at="2024-05-05T19:07:56 ICT" name="verifyUpdateUsernameSuccess" finished-at="2024-05-05T19:08:17 ICT" duration-ms="21252" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUpdateUsernameSuccess -->
+        <test-method signature="verifyCannotUpdateHoSoWithEmtyUsername()[pri:2, instance:testcases.Account_test@27406a17]" started-at="2024-05-05T19:08:17 ICT" name="verifyCannotUpdateHoSoWithEmtyUsername" finished-at="2024-05-05T19:08:25 ICT" duration-ms="8021" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCannotUpdateHoSoWithEmtyUsername -->
+        <test-method signature="verifyCannotUpdateHoSoWithUsernameLessThan6Letters()[pri:3, instance:testcases.Account_test@27406a17]" started-at="2024-05-05T19:08:25 ICT" name="verifyCannotUpdateHoSoWithUsernameLessThan6Letters" finished-at="2024-05-05T19:08:30 ICT" duration-ms="4328" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCannotUpdateHoSoWithUsernameLessThan6Letters -->
+        <test-method signature="verifyCannotUpdateHoSoWithUsernameMoreThan20Leters()[pri:4, instance:testcases.Account_test@27406a17]" started-at="2024-05-05T19:08:30 ICT" name="verifyCannotUpdateHoSoWithUsernameMoreThan20Leters" finished-at="2024-05-05T19:08:34 ICT" duration-ms="4810" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCannotUpdateHoSoWithUsernameMoreThan20Leters -->
+        <test-method signature="verifyCannotUpdateHoSoWithUsernameHaveSpecialLetter()[pri:5, instance:testcases.Account_test@27406a17]" started-at="2024-05-05T19:08:34 ICT" name="verifyCannotUpdateHoSoWithUsernameHaveSpecialLetter" finished-at="2024-05-05T19:08:38 ICT" duration-ms="3957" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCannotUpdateHoSoWithUsernameHaveSpecialLetter -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testcases.Account_test@27406a17]" started-at="2024-05-05T19:08:38 ICT" name="closeBrowser" finished-at="2024-05-05T19:08:41 ICT" duration-ms="2144" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testcases.Account_test -->
+    </test> <!-- chrome browser -->
+  </suite> <!-- FPTPLAY -->
+</testng-results>

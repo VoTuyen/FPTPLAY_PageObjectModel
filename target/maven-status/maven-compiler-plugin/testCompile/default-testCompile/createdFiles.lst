@@ -1,0 +1,5 @@
+testcases\Account_test.class
+TestVerifyElement.class
+testcases\Login_test.class
+pages\AccountPage.class
+pages\HomePage.class

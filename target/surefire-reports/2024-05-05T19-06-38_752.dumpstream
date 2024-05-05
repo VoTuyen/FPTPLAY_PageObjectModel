@@ -1,0 +1,5 @@
+# Created at 2024-05-05T19:06:40.815
+Boot Manifest-JAR contains absolute paths in classpath 'D:\TuyenVTT\My project automation\FPTPLAY_PageObjectModel\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
