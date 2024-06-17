@@ -3,8 +3,8 @@
     <test name="chrome browser">
         <parameter name="browser" value="chrome"/>
         <classes>
-<!--            <class name="BMI_test.testcases.Login_test" />-->
-            <class name="BMI_test.testcases.Account_test" />
+<!--            <class name="testcases.Login_test" />-->
+            <class name="testcases.Account_test" />
         </classes>
     </test>
 
@@ -30,6 +30,5 @@
 <!--                    <class name="BMI_test.testcases.Login_test" />-->
 <!--                </classes>-->
 <!--            </test>-->
-
 
 </suite>
